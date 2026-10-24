@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f7f8">
+    <meta name="description" content="A friendly social space to share moments and stay in touch.">
+    <title>Circle — share your moments</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.2/build/css/intlTelInput.min.css">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="auth-screen" id="auth-screen">
+      <button class="auth-fullscreen-button" type="button" data-action="fullscreen" aria-label="Enter full screen" title="Enter full screen">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M21 16v3a2 2 0 0 1-2 2h-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+        <span>Full screen</span>
+      </button>
+      <section class="auth-brand-panel">
+        <button class="brand auth-brand" type="button" aria-label="Circle home">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 5.5a10.5 10.5 0 0 0 0 21h1.8a2.7 2.7 0 0 0 1.9-4.6l-.9-.9a2.6 2.6 0 0 1 1.9-4.5h2.8A4.9 4.9 0 0 0 28 11.6 12.5 12.5 0 0 0 16 5.5Z"/><circle cx="11.3" cy="13.2" r="1.1"/><circle cx="17" cy="10.6" r="1.1"/><circle cx="22" cy="12.8" r="1.1"/></svg></span><span class="brand-name">circle</span>
+        </button>
+        <div class="auth-brand-message">
+          <span class="auth-sparkle">✦</span>
+          <h1>Your people.<br>Your little corner.</h1>
+          <p>Share the moments that make a day feel like yours.</p>
+        </div>
+        <div class="auth-brand-photo" role="img" aria-label="Friends enjoying a sunny day"></div>
+        <span class="auth-panel-note">A little more connected, a little more you.</span>
+      </section>
+      <section class="auth-form-panel">
+        <div class="auth-form-wrap">
+          <div class="auth-mobile-brand"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 5.5a10.5 10.5 0 0 0 0 21h1.8a2.7 2.7 0 0 0 1.9-4.6l-.9-.9a2.6 2.6 0 0 1 1.9-4.5h2.8A4.9 4.9 0 0 0 28 11.6 12.5 12.5 0 0 0 16 5.5Z"/><circle cx="11.3" cy="13.2" r="1.1"/><circle cx="17" cy="10.6" r="1.1"/><circle cx="22" cy="12.8" r="1.1"/></svg></span><span class="brand-name">circle</span></div>
+          <p class="eyebrow" id="auth-eyebrow">START YOUR STORY</p>
+          <h2 id="auth-title">Create your account</h2>
+          <p class="auth-subtitle" id="auth-subtitle">Find your people and share a little more of life.</p>
+          <div class="auth-mode-tabs" role="tablist" aria-label="Account access">
+            <button class="auth-mode is-selected" type="button" role="tab" aria-selected="true" data-auth-mode="signup">Create account</button>
+            <button class="auth-mode" type="button" role="tab" aria-selected="false" data-auth-mode="signin">Sign in</button>
+          </div>
+          <form class="auth-form" id="signup-form" novalidate>
+            <div class="signup-fields">
+              <div class="signup-field">
+                <label for="signup-name">Your name</label>
+                <input id="signup-name" name="name" type="text" autocomplete="name" placeholder="e.g. Olivia Rhye" minlength="2" maxlength="40" required>
+              </div>
+              <div class="signup-field">
+                <label for="signup-username">Username</label>
+                <div class="username-input"><span>@</span><input id="signup-username" name="username" type="text" autocomplete="username" placeholder="yourname" pattern="[A-Za-z0-9_.]{3,20}" maxlength="20" required></div>
+                <small class="field-hint">3–20 characters: letters, numbers, dots, or underscores.</small>
+              </div>
+              <div class="signup-field">
+                <label for="signup-contact">Phone number</label>
+                <input id="signup-contact" name="contact" type="tel" inputmode="tel" autocomplete="tel" aria-describedby="signup-contact-hint" required>
+                <small class="field-hint" id="signup-contact-hint">Search and choose your country, then enter your phone number.</small>
+              </div>
+              <div class="signup-field">
+                <label for="signup-email">Email address</label>
+                <input id="signup-email" name="email" type="email" autocomplete="email" placeholder="you@gmail.com">
+                <small class="field-hint" id="signup-email-hint">Add an email address to verify it with a code.</small>
+              </div>
+              <div class="signup-field signup-password-field">
+                <label for="signup-password">Password</label>
+                <div class="password-input">
+                  <input id="signup-password" name="password" type="password" autocomplete="new-password" placeholder="At least 8 characters" pattern="(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,}" title="Use at least 8 characters, including one capital letter, one number, and one special character." required>
+                  <button class="password-toggle" type="button" data-toggle-password="signup-password" aria-label="Show password" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                  </button>
+                </div>
+                <small class="field-hint">For a secure password, use at least 8 characters, including one capital letter, one number, and one special character.</small>
+              </div>
+            </div>
+            <button class="auth-submit" type="submit">Create account <span>→</span></button>
+            <div class="social-auth-divider"><span>or</span></div>
+            <button class="google-auth-button" type="button" data-google-auth="signup">
+              <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5Z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.74 7.18l7.72 5.99c4.51-4.18 7.06-10.33 7.06-17.64Z"/><path fill="#FBBC05" d="M10.53 28.59A14.4 14.4 0 0 1 9.75 24c0-1.59.27-3.13.75-4.59l-7.98-6.19A23.9 23.9 0 0 0 0 24c0 3.87.93 7.52 2.56 10.78l7.97-6.19Z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.91-5.81l-7.72-5.99c-2.14 1.44-4.89 2.3-8.19 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 41.62 14.62 48 24 48Z"/></svg>
+              Continue with Google
+            </button>
+          </form>
+          <form class="auth-form verification-form hidden" id="verification-form" novalidate>
+            <p class="verification-intro">Enter the verification code sent to your email address.</p>
+            3<label for="email-code">Email verification code</label>
+            <input id="email-code" name="emailCode" type="text" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" placeholder="6-digit code" required>
+            <button class="auth-submit" type="submit">Verify and create account <span>→</span></button>
+            <button class="auth-back-button" type="button" data-action="back-to-signup">Back to account details</button>
+          </form>
+          <form class="auth-form hidden" id="signin-form" novalidate>
+            <label for="signin-username">Username, email, or phone number</label>
+            <div class="username-input identifier-input">
+              <input id="signin-username" name="username" type="text" autocomplete="username" placeholder="yourname, you@example.com, or +1 555 123 4567" required>
+            </div>
+            <label for="signin-password">Password</label>
+            <div class="password-input">
+              <input id="signin-password" name="password" type="password" autocomplete="current-password" placeholder="Your password" required>
+              <button class="password-toggle" type="button" data-toggle-password="signin-password" aria-label="Show password" aria-pressed="false">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+            <button class="auth-submit" type="submit">Sign in <span>→</span></button>
+            <div class="social-auth-divider"><span>or</span></div>
+            <button class="google-auth-button" type="button" data-google-auth="signin">
+              <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5Z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.74 7.18l7.72 5.99c4.51-4.18 7.06-10.33 7.06-17.64Z"/><path fill="#FBBC05" d="M10.53 28.59A14.4 14.4 0 0 1 9.75 24c0-1.59.27-3.13.75-4.59l-7.98-6.19A23.9 23.9 0 0 0 0 24c0 3.87.93 7.52 2.56 10.78l7.97-6.19Z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.91-5.81l-7.72-5.99c-2.14 1.44-4.89 2.3-8.19 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 41.62 14.62 48 24 48Z"/></svg>
+              Continue with Google
+            </button>
+          </form>
+          <p class="auth-error" id="auth-error" role="alert" aria-live="polite"></p>
+          <p class="auth-disclaimer">Email verification and Google sign-in require the configured Supabase project. Your phone number is saved but not verified. Account data is stored in this browser only.</p>
+        </div>
+      </section>
+    </main>
+
+    <header class="mobile-header">
+      <button class="menu-toggle" type="button" data-action="toggle-menu" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-sidebar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <button class="brand brand-button" type="button" data-view="home" aria-label="Go to home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 5.5a10.5 10.5 0 0 0 0 21h1.8a2.7 2.7 0 0 0 1.9-4.6l-.9-.9a2.6 2.6 0 0 1 1.9-4.5h2.8A4.9 4.9 0 0 0 28 11.6 12.5 12.5 0 0 0 16 5.5Z"/><circle cx="11.3" cy="13.2" r="1.1"/><circle cx="17" cy="10.6" r="1.1"/><circle cx="22" cy="12.8" r="1.1"/></svg></span><span class="brand-name">circle</span>
+      </button>
+      <div class="mobile-actions">
+        <button class="icon-button fullscreen-button" type="button" data-action="fullscreen" aria-label="Enter full screen" title="Enter full screen">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M21 16v3a2 2 0 0 1-2 2h-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+        </button>
+        <button class="icon-button" type="button" data-view="notifications" aria-label="Notifications">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg>
+          <span class="notification-dot"></span>
+        </button>
+        <button class="icon-button" type="button" data-view="messages" aria-label="Messages">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8A8.5 8.5 0 0 1 8.7 3.9a8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="app-shell">
+      <header class="desktop-header">
+        <button class="menu-toggle" type="button" data-action="toggle-menu" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-sidebar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <button class="brand brand-button" type="button" data-view="home" aria-label="Go to home">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 5.5a10.5 10.5 0 0 0 0 21h1.8a2.7 2.7 0 0 0 1.9-4.6l-.9-.9a2.6 2.6 0 0 1 1.9-4.5h2.8A4.9 4.9 0 0 0 28 11.6 12.5 12.5 0 0 0 16 5.5Z"/><circle cx="11.3" cy="13.2" r="1.1"/><circle cx="17" cy="10.6" r="1.1"/><circle cx="22" cy="12.8" r="1.1"/></svg></span><span class="brand-name">circle</span>
+        </button>
+        <button class="icon-button fullscreen-button" type="button" data-action="fullscreen" aria-label="Enter full screen" title="Enter full screen">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M21 16v3a2 2 0 0 1-2 2h-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+        </button>
+      </header>
+      <aside class="sidebar" id="main-sidebar" aria-label="Main navigation" aria-hidden="true" inert>
+        <button class="brand brand-button desktop-brand" type="button" data-view="home" aria-label="Go to home">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 5.5a10.5 10.5 0 0 0 0 21h1.8a2.7 2.7 0 0 0 1.9-4.6l-.9-.9a2.6 2.6 0 0 1 1.9-4.5h2.8A4.9 4.9 0 0 0 28 11.6 12.5 12.5 0 0 0 16 5.5Z"/><circle cx="11.3" cy="13.2" r="1.1"/><circle cx="17" cy="10.6" r="1.1"/><circle cx="22" cy="12.8" r="1.1"/></svg></span><span class="brand-name">circle</span>
+        </button>
+        <nav class="main-nav">
+          <button class="nav-link is-active" type="button" data-view="home">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg><span>Home</span>
+          </button>
+          <button class="nav-link" type="button" data-view="search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><span>Search</span>
+          </button>
+          <button class="nav-link" type="button" data-view="explore">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.4 6.6L21 12l-6.6 2.4L12 21l-2.4-6.6L3 12l6.6-2.4z"/></svg><span>Explore</span>
+          </button>
+          <button class="nav-link" type="button" data-view="messages">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8A8.5 8.5 0 0 1 8.7 3.9a8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"/></svg><span>Messages</span><span class="nav-badge">2</span>
+          </button>
+          <button class="nav-link" type="button" data-view="notifications">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg><span>Notifications</span>
+          </button>
+          <button class="nav-link" type="button" data-action="create">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M12 8v8M8 12h8"/></svg><span>Create post</span>
+          </button>
+          <button class="nav-link profile-nav" type="button" data-view="profile">
+            <img class="nav-avatar" data-user-avatar src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=96&q=80" alt=""><span>Profile</span>
+          </button>
+        </nav>
+        <div class="sidebar-bottom">
+          <button class="nav-link fullscreen-nav" type="button" data-action="fullscreen" aria-label="Enter full screen" title="Enter full screen">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M21 16v3a2 2 0 0 1-2 2h-3M3 16v3a2 2 0 0 0 2 2h3"/></svg><span>Full screen</span>
+          </button>
+          <button class="nav-link" type="button" data-action="help">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.6 9a2.5 2.5 0 1 1 4.4 1.6c-.8.9-2 1.1-2 2.4M12 16.5v.1"/></svg><span>Help center</span>
+          </button>
+          <button class="nav-link" type="button" data-action="menu">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>More</span>
+          </button>
+        </div>
+      </aside>
+      <button class="sidebar-backdrop" type="button" data-action="close-menu" aria-label="Close navigation menu" tabindex="-1"></button>
+
+      <main class="main-content">
+        <section class="home-view" id="home-view">
+          <div class="feed-column">
+            <div class="feed-topline">
+              <div><p class="eyebrow">YOUR LITTLE CORNER</p><h1>Your feed</h1></div>
+              <button class="text-button" type="button" data-action="create"><span class="plus">＋</span> Share a moment</button>
+            </div>
+            <section class="stories-card" aria-label="Stories">
+              <div class="stories-heading"><h2>Stories</h2><span>Fresh moments from your circle</span></div>
+              <div class="stories-list" id="stories-list"></div>
+            </section>
+            <div class="feed-toolbar">
+              <div><h2 id="feed-title">For you</h2><p>Little moments, big memories.</p></div>
+              <label class="search-field" id="search-field">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+                <input id="search-input" type="search" placeholder="Find people or posts" aria-label="Find people or posts">
+              </label>
+            </div>
+            <div class="post-list" id="post-list" aria-live="polite"></div>
+          </div>
+
+          <aside class="right-rail">
+            <section class="profile-mini">
+              <img class="avatar avatar-large" data-user-avatar src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=160&q=85" alt="Your profile photo">
+              <div class="profile-mini-copy"><strong data-user-name>Olivia Rhye</strong><span data-user-handle>@olivia.rhye</span></div>
+              <button class="quiet-button" type="button" data-view="profile">View profile</button>
+            </section>
+            <section class="rail-section">
+              <div class="rail-heading"><h2>People to follow</h2><button type="button" data-view="explore">See all</button></div>
+              <div class="suggestion-list" id="suggestion-list"></div>
+            </section>
+            <section class="invite-card">
+              <div class="invite-icon">✦</div><div><strong>Good things grow together</strong><p>Follow people who make your feed feel like you.</p></div>
+              <button type="button" data-view="explore">Find your people <span>→</span></button>
+            </section>
+            <footer class="page-footer">About · Help · Privacy · Terms<br><span>© 2025 Circle social</span></footer>
+          </aside>
+        </section>
+
+        <section class="messages-view hidden" id="messages-view" aria-label="Messages">
+          <div class="messages-heading"><div><p class="eyebrow">YOUR CONVERSATIONS</p><h1>Messages</h1></div><button class="round-button" type="button" aria-label="New message" data-action="new-message">＋</button></div>
+          <div class="messages-layout">
+            <aside class="conversation-panel"><label class="search-field conversation-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" id="conversation-search" placeholder="Search messages"></label><div id="conversation-list"></div></aside>
+            <section class="chat-panel" id="chat-panel"></section>
+          </div>
+        </section>
+
+        <section class="profile-view hidden" id="profile-view" aria-label="Profile">
+          <div class="profile-cover"></div>
+          <div class="profile-content">
+            <div class="profile-heading">
+              <img class="avatar profile-avatar" data-user-avatar src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=240&q=85" alt="Your profile photo">
+              <div class="profile-heading-actions"><button class="outline-button" type="button" data-action="edit-profile">Edit profile</button><button class="outline-button sign-out-button" type="button" data-action="signout">Sign out</button></div>
+            </div>
+            <div class="profile-name"><h1 data-user-name>Olivia Rhye</h1><span data-user-handle>@olivia.rhye</span><p data-user-bio>Collecting small joys, good light, and places that feel like a deep breath. ✨</p></div>
+            <div class="profile-stats"><div><strong id="profile-post-count">0</strong><span>posts</span></div><div><strong id="profile-following-count">0</strong><span>following</span></div><div><strong>0</strong><span>followers</span></div></div>
+            <div class="profile-tabs"><button class="profile-tab is-selected" type="button" data-profile-tab="posts">Posts</button><button class="profile-tab" type="button" data-profile-tab="saved">Saved</button></div>
+            <div class="profile-grid" id="profile-grid"></div>
+          </div>
+        </section>
+
+        <section class="explore-view hidden" id="explore-view" aria-label="Explore">
+          <div class="explore-heading"><p class="eyebrow">A LITTLE INSPIRATION</p><h1>Find your people</h1><p>Discover kindred spirits and moments worth slowing down for.</p></div>
+          <div class="explore-people" id="explore-people"></div>
+          <h2 class="explore-subheading">A few moments to explore</h2><div class="explore-grid" id="explore-grid"></div>
+        </section>
+
+        <section class="notifications-view hidden" id="notifications-view" aria-label="Notifications">
+          <div class="messages-heading"><div><p class="eyebrow">A LITTLE LOVE</p><h1>Notifications</h1></div><span class="today-label">Today</span></div>
+          <div class="notification-list" id="notification-list"></div>
+        </section>
+      </main>
+    </div>
+
+    <button class="help-fab" id="help-fab" type="button" data-action="help" aria-label="Open help chat">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8A8.5 8.5 0 0 1 8.7 3.9a8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"/></svg><span>Need a hand?</span>
+    </button>
+    <section class="help-chat hidden" id="help-chat" aria-label="Help chatbot">
+      <div class="help-chat-header"><div class="help-bot-avatar">✦</div><div><strong>Circle support</strong><span>Here to help, anytime</span></div><button type="button" class="icon-button" data-action="close-help" aria-label="Close help chat">×</button></div>
+      <div class="help-chat-messages" id="help-chat-messages"><div class="bot-message">Hi Olivia! 👋 I’m here if you need help with your account, posts, or privacy.</div><div class="quick-help"><button type="button" data-help-question="How do I follow someone?">Following people</button><button type="button" data-help-question="How do messages work?">Messages & calls</button><button type="button" data-help-question="How can I control my privacy?">Privacy settings</button></div></div>
+      <form class="help-form" id="help-form"><input id="help-input" type="text" placeholder="Ask me anything..." aria-label="Ask Circle support"><button type="submit" aria-label="Send help message"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4zM22 2 11 13"/></svg></button></form>
+    </section>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <button class="mobile-nav-link is-active" type="button" data-view="home" aria-label="Home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg></button>
+      <button class="mobile-nav-link" type="button" data-view="explore" aria-label="Explore"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.4 6.6L21 12l-6.6 2.4L12 21l-2.4-6.6L3 12l6.6-2.4z"/></svg></button>
+      <button class="mobile-nav-link create-mobile" type="button" data-action="create" aria-label="Create post"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M12 8v8M8 12h8"/></svg></button>
+      <button class="mobile-nav-link" type="button" data-view="messages" aria-label="Messages"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8A8.5 8.5 0 0 1 8.7 3.9a8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"/></svg></button>
+      <button class="mobile-nav-link" type="button" data-view="profile" aria-label="Profile"><img data-user-avatar src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=96&q=80" alt=""></button>
+    </nav>
+
+    <div class="modal-backdrop hidden" id="create-modal" role="dialog" aria-modal="true" aria-labelledby="create-title">
+      <form class="modal-card create-card" id="create-form">
+        <div class="modal-header"><button type="button" class="modal-close" data-action="close-modal" aria-label="Close">×</button><h2 id="create-title">Share a moment</h2><button type="submit" class="share-submit">Share</button></div>
+        <div class="create-author"><img class="avatar" data-user-avatar src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=96&q=80" alt=""><strong data-user-name>Olivia Rhye</strong></div>
+        <textarea id="post-caption" maxlength="280" placeholder="What’s happening in your little corner?" aria-label="Write a caption"></textarea>
+        <div class="create-photo-preview" id="create-photo-preview"><span>✦</span><p>Your photo will appear here</p><small>Demo: a moment is created with a lovely sample image</small></div>
+      </form>
+    </div>
+    <div class="modal-backdrop hidden" id="call-modal" role="dialog" aria-modal="true" aria-label="Call">
+      <div class="call-card" id="call-card"></div>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.2/build/js/intlTelInput.min.js"></script>
+    <script src="supabase-config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

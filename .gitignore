@@ -1,0 +1,10 @@
+*
+!.gitignore
+!README.md
+!app.js
+!index.html
+!styles.css
+!supabase-config.js
+!SUPABASE_SETUP.md
+!supabase/
+!supabase/**
